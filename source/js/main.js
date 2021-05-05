@@ -106,14 +106,5 @@ const carousel = {
 }
 
 
-
-
-
-
-
 carousel.create(popularGoods);
 carousel.create(promotionsGoods);
-
-
-
-
