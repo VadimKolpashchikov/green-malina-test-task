@@ -1,0 +1,283 @@
+.page-footer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 36px 10px 32px;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.62;
+  text-align: center;
+  color: @page-background;
+  background-color: @dark-color;
+
+  & h4 {
+    display: none;
+  }
+
+  &__logo-link {
+    display: flex;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+  }
+
+  &__list-wrapper {
+    display: none;
+  }
+
+  &__contacts-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: @footer-dull-text;
+  }
+
+  &__social-wrapper {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+    align-self: start;
+    margin: 0 25px 0 auto;
+    line-height: 1.33;
+  }
+
+  &__social-icon-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 5px -2.5px 40px;
+    text-align: start;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin: 2.5px;
+    background: @social-icon-background;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+      background: @social-icon-hover-background
+    }
+  }
+
+  &__social-icon {
+    fill: @page-background;
+  }
+
+  &__phone-link {
+    margin: 0 auto 22px;
+    color: @footer-dull-text;
+
+
+    &_short {
+      font-weight: bold;
+    }
+  }
+
+  &__address {
+    padding: 0 55px 17px;
+    text-align: center;
+
+    & span {
+      font-weight: bold;
+    }
+  }
+
+  &__opening-hours {
+    padding: 0 55px 50px;
+    text-align: center;
+
+    & span {
+      display: none;
+    }
+  }
+
+  &__copyright {
+    padding-bottom: 34px;
+
+    & a {
+      color: @page-background;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: @green-text;
+      }
+    }
+  }
+
+  &__author {
+
+    & a {
+      font-weight: bold;
+      color: @green-text;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-footer {
+    padding: 0;
+
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 43px 20px 40px;
+    }
+
+    &__logo-link {
+      display: flex;
+      position: static;
+      top: 40px;
+      left: 10px;
+      margin-bottom: auto;
+
+      & img {
+        width: 201px;
+        height: 68px;
+      }
+    }
+
+    &__list-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & h4 {
+      display: inline;
+      margin: 0 0 36px;
+      text-align: left;
+    }
+
+    &__title {
+      font-size: 13px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.23;
+      color: @page-background;
+
+      &:hover,
+      &:focus {
+        color: @green-text;
+        text-decoration: underline;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      list-style: none;
+      padding: 0;
+    }
+
+    &__list-item {
+
+      & a {
+        font-size: 13px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.69;
+        color: @footer-dull-text;
+
+        &:hover,
+        &:focus {
+          color: @green-text;
+        }
+      }
+    }
+
+    &__contacts-container {
+      align-items: flex-start;
+      width: 295px;
+    }
+
+    &__phone-link {
+      margin: 0 0 25px;
+
+      &:hover,
+      &:focus {
+        color: @green-text;
+      }
+    }
+
+    &__social-wrapper {
+      order: 0;
+      margin: 0;
+    }
+
+    &__social-icon-wrapper {
+      margin: 5px -2.5px 0;
+    }
+
+    &__address {
+      padding: 0 0 25px;
+      text-align: left;
+    }
+
+    &__opening-hours {
+      padding: 0 0 25px;
+
+      & span {
+        display: inline;
+        text-align: left;
+        color: @opening-hours_special;
+      }
+    }
+
+    &__author-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 63px;
+    }
+
+    &__copyright {
+      padding-bottom: 0;
+    }
+
+    &__author {
+      width: 295px;
+    }
+  }
+}
+
+@media (min-width: @desktop-wide-width) {
+  .page-footer {
+
+    &__container {
+      padding: 43px 75px 40px;
+    }
+  }
+}
+
+@media (min-width: @desktop-max-width) {
+  .page-footer {
+
+    &__container {
+      width: 1495px;
+      padding: 42px 0 40px;
+      margin: 0 auto;
+    }
+  }
+}

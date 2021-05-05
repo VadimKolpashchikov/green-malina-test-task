@@ -1,0 +1,136 @@
+.special-offers {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 49px;
+
+  &__item {
+    display: flex;
+    position: relative;
+    flex-basis: 320px;
+    height: 387px;
+
+    &_short {
+      height: 188px;
+    }
+  }
+
+  &__img-container {
+    width: 100%;
+    background-color: @img-background;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      vertical-align: top;
+      object-fit: fill;
+    }
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    width: 105px;
+    top: 27px;
+    left: 26px;
+    z-index: 2;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: @dark-color;
+  }
+
+  &__text-collection {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  &__text-season {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 95px;
+    min-height: 26px;
+    padding: 9px 9px;
+    margin: 12px auto 0 0;
+    font-size: 11px;
+    font-stretch: normal;
+    border-radius: 13px;
+    color: @page-background;
+    box-sizing: border-box;
+
+    &_female-spring {
+      background-color: @female-old-spring-collection-text-background;
+    }
+
+    &_man-spring {
+      background-color: @man-old-spring-collection-text-background;
+    }
+
+    &_female-winter {
+      background-color: @female-new-winter-collection-text-background;
+    }
+
+    &_man-winter {
+      background-color: @man-new-winter-collection-text-background;
+    }
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .special-offers {
+    margin: 0 64px 49px;
+
+    &__item {
+      flex-basis: 50%;
+      height: auto;
+
+      &_short {
+        height: auto;
+      }
+    }
+
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .special-offers {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0 20px 60px;
+
+    &__item {
+      grid-row: 1/3;
+      height: auto;
+
+      &_short {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        height: auto;
+
+        &:last-child {
+          grid-row: 2/3;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: @desktop-wide-width) {
+  .special-offers {
+    gap: 30px;
+    margin: 0 75px 60px;
+  }
+}
+
+@media (min-width: @desktop-max-width) {
+  .special-offers {
+    width: 1770px;
+    margin: 0 auto 60px;
+  }
+}

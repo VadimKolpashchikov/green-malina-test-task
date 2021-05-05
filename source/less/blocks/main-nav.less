@@ -1,0 +1,35 @@
+.main-nav {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    width: auto;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    width: auto;
+    color: @dark-color;
+    margin: 0 6px;
+
+    &-text {
+      padding-right: 7px;
+    }
+
+    &:hover,
+    &:focus {
+      color: @green-text;
+
+      & .main-nav__icon-arrow {
+        fill: @green-text;
+      }
+    }
+  }
+
+  &__icon-arrow {
+    transform: rotate(90deg);
+  }
+}
