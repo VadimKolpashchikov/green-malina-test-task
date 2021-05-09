@@ -22,6 +22,10 @@
     color: @text;
     background-color: @page-background;
   }
+
+  &__main {
+    margin-bottom: 21px;
+  }
 }
 
 .page__body a {
@@ -36,4 +40,13 @@
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
+}
+
+@media (min-width: @desktop-width) {
+  .page {
+
+    &__main {
+      margin-bottom: 0;
+    }
+  }
 }

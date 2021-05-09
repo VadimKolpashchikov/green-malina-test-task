@@ -27,7 +27,7 @@
     align-items: center;
     width: 135px;
     height: 185px;
-    margin-bottom: 13px;
+    margin-bottom: 11px;
   }
 
   &__img-control-container {
@@ -86,12 +86,16 @@
   .carousel-item {
     position: relative;
     padding: 10px 10px 0 0;
-    margin: 0 0 72px;
+    margin: 0 0 68px;
     font-size: 14px;
 
     &__img-container {
       position: relative;
 
+    }
+
+    &__img-carousel {
+      margin-bottom: 17px;
     }
 
     &__img-control-container {
@@ -187,11 +191,12 @@
     }
 
     &__title {
-      font-size: 14px;
+      font-size: 13px;
+      padding-bottom: 3px;
     }
 
     &__price {
-      padding-bottom: 19px;
+      padding-bottom: 16px;
     }
 
     &__additional-info {
@@ -208,10 +213,14 @@
       & .carousel-item__additional-info {
         display: none;
       }
+
+      & .carousel-item__price {
+        padding-bottom: 10px;
+      }
     }
 
     &__credit {
-      padding-bottom: 10px;
+      padding-bottom: 7px;
 
       & span {
         font-weight: bold;
@@ -238,7 +247,7 @@
     &:hover,
     &:focus {
       margin: 0 0 0 -10px;
-      padding: 9px 9px 47px;
+      padding: 9px 9px 43px;
       box-shadow: 0 3px 7px 0 @article-shadow;
       border: solid 1px @article-border;
       position: relative;

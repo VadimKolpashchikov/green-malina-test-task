@@ -18,7 +18,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 20px 8px 17px;
     box-sizing: border-box;
   }
 
@@ -33,6 +33,7 @@
     font-size: 7px;
     line-height: 7px;
     font-weight: bold;
+    text-transform: uppercase;
     background: none;
     border: none;
     box-sizing: border-box;
@@ -79,6 +80,7 @@
   &__search{
     width: 20px;
     height: 20px;
+    padding-bottom: 3px;
     cursor: pointer;
 
     &-input {
@@ -106,7 +108,7 @@
 @media (min-width: @desktop-width) {
   .page-header {
     flex-wrap: wrap;
-    margin-bottom: 60px;
+    margin-bottom: 61px;
 
     &__container {
       display: block;
@@ -191,8 +193,8 @@
       &-input {
         display: block;
         max-height: 36px;
-        width: 216px;
-        padding: 12px 40px 12px 16px;
+        width: 100%;
+        padding: 12px 40px 12px 18px;
         border-radius: 18px;
         border: solid 1px @gray-background;
         box-sizing: border-box;
@@ -266,8 +268,16 @@
       margin: 0 75px;
     }
 
+    &__phone-link {
+      min-width: 194px;
+    }
+
     &__phone_icon {
       display: block;
+    }
+
+    &__search {
+      width: 315px;
     }
   }
 }
@@ -282,6 +292,14 @@
     &__nav-container {
       max-width: 1770px;
       margin: 0 auto;
+    }
+
+    &__logo {
+      margin-right: 10px;
+    }
+
+    &__search {
+      margin-left: 25px;
     }
   }
 }

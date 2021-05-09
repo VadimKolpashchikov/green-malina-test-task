@@ -6,6 +6,7 @@
 
   &__item {
     width: auto;
+    margin: 0 6px;
   }
 
   &__link {
@@ -13,7 +14,6 @@
     align-items: center;
     width: auto;
     color: @dark-color;
-    margin: 0 6px;
 
     &-text {
       padding-right: 7px;
@@ -31,5 +31,13 @@
 
   &__icon-arrow {
     transform: rotate(90deg);
+  }
+}
+
+@media (min-width: @desktop-max-width) {
+  .main-nav {
+    &__item {
+      margin: 0 46px 0 0;
+    }
   }
 }
