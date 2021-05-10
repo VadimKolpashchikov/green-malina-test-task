@@ -146,9 +146,9 @@
     &__logo-link {
       display: flex;
       position: static;
-      top: 40px;
-      left: 10px;
       margin-bottom: auto;
+      margin-top: 8px;
+      margin-right: 30px;
 
       & img {
         width: 201px;
@@ -156,14 +156,21 @@
       }
     }
 
+    &__lists-container {
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
     &__list-wrapper {
       display: flex;
       flex-direction: column;
+      margin-right: 30px;
     }
 
     & h4 {
       display: inline;
-      margin: 0 0 36px;
+      margin: 0 0 26px;
       text-align: left;
     }
 
@@ -172,6 +179,7 @@
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
+      text-transform: uppercase;
       line-height: 1.23;
       color: @page-background;
 
@@ -197,7 +205,7 @@
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.69;
+        line-height: 22px;
         color: @footer-dull-text;
 
         &:hover,
@@ -210,10 +218,11 @@
     &__contacts-container {
       align-items: flex-start;
       width: 295px;
+      margin-left: 30px;
     }
 
     &__phone-link {
-      margin: 0 0 25px;
+      margin: 0 0 15px;
 
       &:hover,
       &:focus {
@@ -231,12 +240,12 @@
     }
 
     &__address {
-      padding: 0 0 25px;
+      padding: 0 0 18px;
       text-align: left;
     }
 
     &__opening-hours {
-      padding: 0 0 25px;
+      padding: 0 0 12px;
 
       & span {
         display: inline;
@@ -250,7 +259,7 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      margin-top: 63px;
+      margin-top: 13px;
     }
 
     &__copyright {
@@ -269,6 +278,14 @@
     &__container {
       padding: 48px 75px 40px;
     }
+
+    &__logo-link {
+      margin-right: 60px;
+    }
+
+    &__contacts-container {
+      margin-left: 60px;
+    }
   }
 }
 
@@ -277,8 +294,27 @@
 
     &__container {
       width: 1520px;
-      padding: 37px 0 40px;
+      padding: 37px 0 40px 24px;
       margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    &__logo-link {
+      margin-right: 115px;
+    }
+
+    &__contacts-container {
+     margin-left: 20px;
+    }
+
+    &__lists-container {
+      display: flex;
+      justify-content: flex-start;
+      flex-grow: 0;
+    }
+
+    & h4 {
+      margin: 0 90px 26px 0;
     }
   }
 }
