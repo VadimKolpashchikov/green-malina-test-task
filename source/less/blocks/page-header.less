@@ -5,6 +5,11 @@
   border-bottom: 1px solid @border;
   box-sizing: border-box;
 
+  &__logo_icon {
+    width: 160px;
+    height: 27px;
+  }
+
   &__container {
     display: none;
   }
@@ -139,6 +144,7 @@
       margin-right: 37px;
       white-space: pre-wrap;
       color: @page-background;
+      background-color: @header-hover-background;
 
       & span {
         font-weight: bold;
@@ -146,7 +152,11 @@
 
       &:hover,
       &:focus  {
-        background-color: @header-hover-background;
+        color: @green-text;
+
+        & svg {
+          fill: @green-text;
+        }
       }
     }
 
@@ -194,9 +204,10 @@
         display: block;
         max-height: 36px;
         width: 100%;
-        padding: 12px 40px 12px 18px;
+        padding: 8px 40px 8px 18px;
         border-radius: 18px;
         border: solid 1px @gray-background;
+        vertical-align: center;
         box-sizing: border-box;
 
         &::placeholder {
@@ -206,6 +217,11 @@
           font-style: normal;
           line-height: 1.38;
           color: @dark-color;
+          vertical-align: center;
+        }
+
+        &::-moz-placeholder {
+
         }
 
         &:focus {

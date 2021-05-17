@@ -17,23 +17,6 @@
     line-height: 1.62;
   }
 
-  &__link {
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-    font-size: 13px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.62;
-    color: @page-background;
-
-    &:hover,
-    &:focus  {
-      background-color: @header-hover-background;
-    }
-  }
-
   &__icon {
     display: none;
     padding-right: 12px;
@@ -50,6 +33,28 @@
       font-size: 18px;
       line-height: 30px;
       vertical-align: center;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.62;
+    color: @page-background;
+
+    &:hover,
+    &:focus  {
+      color: @green-text;
+
+      & .info-list__icon {
+        color: @green-text;
+        fill: @green-text;
+      }
     }
   }
 }

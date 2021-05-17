@@ -1,3 +1,15 @@
+@media (max-width: @mobil-width-only) {
+  .special-offers {
+    &__item {
+      max-height: 387px;
+
+      &_man-spring {
+        max-height: 393px;
+      }
+    }
+  }
+}
+
 .special-offers {
   display: flex;
   justify-content: center;
@@ -8,15 +20,11 @@
   &__item {
     display: flex;
     position: relative;
-    flex-basis: 320px;
-    height: 387px;
+    flex-basis: 100%;
+    height: auto;
 
     &_short {
-      height: 188px;
-    }
-
-    &_man-spring {
-      height: 393px;
+      min-height: 188px;
     }
   }
 
@@ -86,7 +94,7 @@
 
 @media (min-width: @tablet-width) {
   .special-offers {
-    margin: 0 64px 49px;
+    margin-bottom: 49px;
 
     &__item {
       flex-basis: 50%;

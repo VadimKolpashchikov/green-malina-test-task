@@ -2,22 +2,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 135px;
   height: 100%;
   font-size: 12px;
-  margin: 0 5px;
+  padding-right: 10px;
+  box-sizing: border-box;
+
+  &__bbb {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: red;
+  }
 
   &__img-container {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: @img-background;
-    width: 135px;
-    height: 185px;
+    width: 100%;
+    min-height: 185px;
     box-sizing: border-box;
 
     & img {
       object-fit: fill;
+      width: 100%;
+      height: auto;
+      min-height: 185px;
     }
   }
 
@@ -25,12 +38,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 135px;
-    height: 185px;
+    width: 100%;
+    height: auto;
     margin-bottom: 11px;
   }
 
-  &__img-control-container {
+  &__img-control {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  &__special-conditions {
     display: none;
   }
 
@@ -62,52 +80,24 @@
 
 @media (min-width: @tablet-width) {
   .carousel-item {
-    width: 240px;
     font-size: 13px;
-
-    &__img-container {
-      width: 240px;
-      height: 329px;
-
-      & img {
-        width: 100%;
-        height: 329px;
-      }
-    }
-
-    &__img-carousel {
-      width: 240px;
-      height: 329px;
-    }
   }
 }
 
 @media (min-width: @desktop-width) {
   .carousel-item {
     position: relative;
-    padding: 10px 10px 0 0;
-    margin: 0 0 68px;
-    font-size: 14px;
+    padding: 9px 9px 0;
+    margin: 0 -5px 68px;
+    font-size: 13px;
+    border: solid 1px transparent;
 
     &__img-container {
       position: relative;
-
     }
 
     &__img-carousel {
       margin-bottom: 17px;
-    }
-
-    &__img-control-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      visibility: hidden;
-      position: absolute;
-      top: 140px;
-      width: 240px;
-      box-sizing: border-box;
-      z-index: 10;
     }
 
     &__img-control {
@@ -120,58 +110,24 @@
       background: none;
       cursor: pointer;
       pointer-events: auto;
+      z-index: 11;
 
       &_left {
         transform: rotate(180deg);
+        left: 0;
+      }
+
+      &_right {
+        right: 0;
+      }
+
+      &_disabled {
+        opacity: 0.4;
+        cursor: default;
       }
     }
 
-    &_new {
-      & .carousel-item__img-carousel {
-
-        &::before {
-          content: "new";
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          bottom: -4px;
-          left: 0;
-          width: 43px;
-          height: 19px;
-          font-size: 10px;
-          text-transform: uppercase;
-          font-weight: bold;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 1.5;
-          border-radius: 2px;
-          color: @page-background;
-          background-color: @new-product-background;
-          z-index: 5;
-        }
-
-        &::after {
-          content: "-30%";
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          bottom: -4px;
-          left: 47px;
-          width: 43px;
-          height: 19px;
-          font-size: 10px;
-          text-transform: uppercase;
-          font-weight: bold;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 1.5;
-          border-radius: 2px;
-          color: @page-background;
-          background-color: @discount-product;
-        }
-      }
+    &_new-price {
 
       & .carousel-item__price {
         color: @discount-product;
@@ -188,6 +144,41 @@
 
     &__text-container {
       margin-left: 10px;
+      position: relative;
+    }
+
+    &__special-conditions {
+      display: flex;
+      position: absolute;
+      top: -32px;
+      left: -10px;
+      width: 100%;
+      margin: -2px;
+      z-index: 5;
+    }
+
+    &__special-condition {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 43px;
+      min-height: 19px;
+      padding: 2px;
+      margin: 2px;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.3;
+      border-radius: 2px;
+      box-sizing: border-box;
+      color: @page-background;
+      background-color: @new-product-background;
+
+      &_discount {
+        background-color: @discount-product;
+      }
     }
 
     &__title {
@@ -196,6 +187,7 @@
     }
 
     &__price {
+      font-size: 14px;
       padding-bottom: 16px;
     }
 
@@ -234,35 +226,39 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 258px;
+      right: 0;
+      width: 100%;
       height: 48px;
       font-size: 14px;
       background: @button-background;
       border: none;
       box-sizing: border-box;
       cursor: pointer;
+      color: @article-title;
       z-index: 10;
+
+      &:hover,
+      &:focus {
+        background: @img-background;
+      }
     }
 
     &:hover,
     &:focus {
-      margin: 0 0 0 -10px;
+      margin-bottom: 0;
       padding: 9px 9px 43px;
       box-shadow: 0 3px 7px 0 @article-shadow;
       border: solid 1px @article-border;
       position: relative;
+      background: @page-background;
       z-index: 10;
 
-      & .carousel-item__img-control-container {
-        visibility: visible;
-      }
-
-      & a {
+      & .carousel-item__link {
         cursor: default;
       }
 
-      & .carousel-item__img-container {
-
+      & .carousel-item__img-control {
+        visibility: visible;
       }
 
       & .carousel-item__size {
@@ -280,32 +276,16 @@
   }
 }
 
-@media (min-width: @desktop-wide-width) {
+@media (min-width: @desktop-max-width) {
   .carousel-item {
-    width: 346px;
 
     &__img-container {
-      width: 346px;
-      height: 474px;
-
-      & img {
-        width: 100%;
-        height: 474px;
-      }
+      width: 343px;
     }
 
-    &__img-carousel {
-      width: 346px;
-      height: 474px;
-    }
-
-    &__img-control-container {
-      top: 212px;
-      width: 346px;
-    }
-
-    &__button {
-      width: 364px;
+    & img {
+      height: 475px;
     }
   }
 }
+

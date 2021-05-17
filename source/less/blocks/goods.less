@@ -92,15 +92,19 @@
         transform: rotate(180deg);
       }
 
-      &:hover,
-      &:focus {
+      &:hover:not(.goods__button_disabled),
+      &:focus:not(.goods__button_disabled) {
         background: @green-text;
       }
     }
 
     &__carousel {
       box-sizing: border-box;
-      padding-left: 20px;
+    }
+
+    &__button_disabled {
+      opacity: 0.4;
+      cursor: default;
     }
   }
 }
@@ -110,10 +114,6 @@
 
     &__title-container {
       padding: 0 75px;
-    }
-
-    &__carousel {
-      padding-left: 75px;
     }
   }
 }
@@ -128,7 +128,7 @@
     }
 
     &__carousel {
-      width: 1770px;
+      width: 1920px;
       padding: 0;
       margin: 0 auto;
     }
